@@ -17,3 +17,5 @@ jobs:
       - uses: blck-snwmn/share-workflows/go/setup@main
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
+        with:
+          args: --enable=gosec
