@@ -1,6 +1,10 @@
 name: eslint
 on: 
   workflow_call:
+    inputs:
+      working-directory:
+        type: string
+        default: .
 jobs:
   eslint:
     runs-on: ubuntu-latest
@@ -13,3 +17,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review # Change reporter.
+          workdir: ${{ inputs.working-directory }}
