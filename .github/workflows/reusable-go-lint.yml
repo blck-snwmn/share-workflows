@@ -2,20 +2,29 @@ name: Go test&lint
 
 on:
   workflow_call:
-
+    inputs:
+      working-directory:
+        type: string
+        default: .
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: blck-snwmn/share-workflows/go/setup@main
+        with:
+          working-directory: ${{ inputs.working-directory }}
       - name: Run test
+        working-directory: ${{ inputs.working-directory }}
         run: |
           go test ./... --shuffle on
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: blck-snwmn/share-workflows/go/setup@main
+        with:
+          working-directory: ${{ inputs.working-directory }}
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:
           args: --enable=gosec
+          working-directory: ${{ inputs.working-directory }}
