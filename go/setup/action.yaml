@@ -8,4 +8,4 @@ runs:
     - uses: actions/checkout@v3
     - uses: actions/setup-go@v4
       with:
-        go-version-file: "go.mod"
+        go-version-file: "${{ inputs.working-directory }}/go.mod"
