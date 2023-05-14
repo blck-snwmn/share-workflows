@@ -28,6 +28,5 @@ runs:
       run: |
         result=`npx textlint -f checkstyle ${{ github.workspace }}/${{ inputs.directory }}/**`
         echo "$result"
-        echo "$result" | reviewdog -f=checkstyle
       env:
         REVIEWDOG_GITHUB_API_TOKEN: ${{github.token}}
