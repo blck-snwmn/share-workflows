@@ -5,3 +5,8 @@ rules:
       - hadware
       - harrdware
       - harddware
+  - expected: 齊藤
+    patterns:
+      - 斉藤
+      - 齋藤
+      - 西東
