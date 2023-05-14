@@ -39,5 +39,5 @@ runs:
     
     - name: Reviewdog
       run: |
-        echo "${{steps.textlint.outputs.output}}" | reviewdog -f=checkstyle -name="textlint" -reporter=github-pr-check 
+        echo '${{steps.textlint.outputs.output}}' | reviewdog -f=checkstyle -name="textlint" -reporter=github-pr-check 
       shell: bash
