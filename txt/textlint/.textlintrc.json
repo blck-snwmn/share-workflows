@@ -1,0 +1,17 @@
+{
+  "plugins": {
+    "@textlint/text": {
+      "extensions": [
+        ".json"
+      ]
+    }
+  },
+  "filters": {},
+  "rules": {
+    "prh": {
+      "rulePaths": [
+        "./prh.yml"
+      ]
+    }
+  }
+}

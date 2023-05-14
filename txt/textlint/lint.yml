@@ -1,0 +1,24 @@
+name: 'Textlint Action'
+description: 'Runs textlint on files'
+inputs:
+  directory:
+    description: 'Relative path to directory from `workspace` for scanning files.'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Checkout code'
+      uses: actions/checkout@v2
+
+    - name: 'Set up Node.js'
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: 'Install dependencies'
+      run: npm install
+      working-directory: ${{ github.action_path }}
+
+    - name: 'Run textlint'
+      run: npx textlint ${{ github.workspace }}/${{ inputs.directory }}/**
+      working-directory: ${{ github.action_path }}

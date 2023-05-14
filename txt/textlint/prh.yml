@@ -1,0 +1,7 @@
+version: 1
+rules:
+  - expected: hardware
+    patterns:
+      - hadware
+      - harrdware
+      - harddware
