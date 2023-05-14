@@ -36,7 +36,9 @@ runs:
         echo "output=$(npx textlint -f checkstyle ${{ github.workspace }}/${{ inputs.directory }}/** 2>&1)" > "$GITHUB_OUTPUT"
       env:
         REVIEWDOG_GITHUB_API_TOKEN: ${{github.token}}
+    
     - name: Reviewdog
       if: ${{ steps.textlint.outcome == 'failure' }}
       run: |
         echo "${{steps.textlint.outputs.output}}" | reviewdog -f=checkstyle -name="textlint" -reporter=github-pr-check 
+      shell: bash
