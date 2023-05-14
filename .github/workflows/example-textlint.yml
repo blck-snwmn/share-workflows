@@ -3,7 +3,7 @@ name: Example for textlint
 on:
   pull_request:
 jobs:
-  greet:
+  textlint:
     runs-on: ubuntu-latest
     steps:
       - uses: blck-snwmn/share-workflows/txt/textlint@feat/add-invalid-json
