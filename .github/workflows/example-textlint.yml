@@ -1,4 +1,4 @@
-name: Greet
+name: Example for textlint
 
 on:
   push:
