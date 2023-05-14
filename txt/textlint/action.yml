@@ -26,6 +26,7 @@ runs:
       working-directory: ${{ github.action_path }}
       shell: bash
       run: |
-        npx textlint -f checkstyle ${{ github.workspace }}/${{ inputs.directory }}/**
+        result=$(npx textlint -f checkstyle ${{ github.workspace }}/${{ inputs.directory }}/** 2>&1)
+        echo "$result"
       env:
         REVIEWDOG_GITHUB_API_TOKEN: ${{github.token}}
