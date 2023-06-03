@@ -7,9 +7,9 @@ runs:
   steps:
     - uses: blck-snwmn/share-workflows/go/setup@main
       with:
-        working-directory: "{{inputs.working-directory}}"
+        working-directory: ${{inputs.working-directory}}
     - name: golangci-lint
       uses: golangci/golangci-lint-action@v3
       with:
         args: --enable=gosec
-        working-directory: "{{inputs.working-directory}}"
+        working-directory: ${{ inputs.working-directory }}
