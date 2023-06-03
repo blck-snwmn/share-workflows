@@ -6,7 +6,8 @@ runs:
   using: composite
   steps:
     - uses: blck-snwmn/share-workflows/go/setup@main
-    with:
+      with:
+        working-directory: {{inputs.working-directory}}
     - name: golangci-lint
       uses: golangci/golangci-lint-action@v3
       with:
