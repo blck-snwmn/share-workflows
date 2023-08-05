@@ -6,6 +6,9 @@ on:
       working-directory:
         type: string
         default: .
+      config-path:
+        type: string
+        required: false
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -20,11 +23,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: blck-snwmn/share-workflows/go/setup@main
+      - uses: blck-snwmn/share-workflows/go/lint@main
         with:
           working-directory: ${{ inputs.working-directory }}
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v3
-        with:
-          args: --enable=gosec
-          working-directory: ${{ inputs.working-directory }}
+          config-path: ${{ inputs.config-path }}
