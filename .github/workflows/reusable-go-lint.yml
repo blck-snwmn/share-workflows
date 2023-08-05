@@ -16,7 +16,7 @@ jobs:
       - name: Run test
         working-directory: ${{ inputs.working-directory }}
         run: |
-          go test ./... --shuffle on
+          go test ./... --shuffle on --parallel 10 --p 10
   lint:
     runs-on: ubuntu-latest
     steps:
