@@ -16,7 +16,7 @@ runs:
       run : |
         if [[ -z "${{ inputs.config-path }}" ]]; then
           echo "config path is empty"
-          echo "config-path=${{ inputs.working-directory }}/.golangci.yml" >> $GITHUB_OUTPUT
+          echo "config-path=${{ github.action_path }}/.golangci.yml" >> $GITHUB_OUTPUT
         else
           echo "config path is not empty"
           echo "config-path=${{ inputs.config-path }}" >> $GITHUB_OUTPUT
