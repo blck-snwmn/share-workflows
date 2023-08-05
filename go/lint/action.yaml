@@ -21,6 +21,7 @@ runs:
           echo "config path is not empty"
           echo "config-path=${{ inputs.config-path }}" >> $GITHUB_OUTPUT
         fi
+      shell: bash
     - name: golangci-lint
       uses: golangci/golangci-lint-action@v3
       with:
